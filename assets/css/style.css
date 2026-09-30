@@ -1,0 +1,224 @@
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #000000;
+  overflow-x: hidden;
+}
+
+/*Main Body Header*/
+
+#projects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/*Header*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+
+/*Logo MarkUp*/
+.logoContainer {
+  height: 60px;
+  width: 60px;
+  position: relative;
+  top: 10px;
+  left: 2%;
+  
+}
+
+.logoContainer img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #f2f2f2;
+  box-shadow: 0 0 0.3px #f2f2f2, 0 0 4px #f2f2f2;
+}
+
+/*Navbar Menu Bar Markup*/
+.NavBar {
+  cursor: pointer;
+  position: relative;
+  right: 6%;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+}
+
+.NavBar span {
+  display: block;
+  border-radius: 30px;
+  width: 30px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #fff;
+  transition: transform .3s ease-in-out, width .3s ease-in-out;
+}
+
+.NavBar span:nth-child(1) {
+  transform: translateX(6px);
+}
+
+.NavBar span:nth-child(2) {
+  transform: translateX(-3px);
+  width: 20px;
+}
+
+.NavBar span:nth-child(3) {
+  transform: translateX(6px);
+}
+
+
+.NavBar:hover span {
+  width: 30px;
+  transform: translateX(0);
+  background-color: #ddcc5a;
+}
+
+/*Overlay*/
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  border: 0;
+  background-color: #0f0f0fdf;
+  z-index: 700;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .3s ease, visibility .3s ease;
+}
+
+.site-nav {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .3s ease, visibility .3s ease;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: grid;
+  padding: 0;
+}
+
+.close-nav {
+  font-weight: 100;
+  font-size: 30px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 20px;
+  padding: 0;
+  border: 0;
+  color: #fff;
+  background: transparent;
+  transition: color .3s ease-in-out;
+}
+
+.close-nav:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.site-nav li {
+  padding: 2px;
+}
+
+.site-nav li a {
+  position: relative;
+  color: #f2f2f2;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 25px;
+  font-weight: 100;
+}
+
+.site-nav li a::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background-color: #f2f2f2;
+  transition: width 0.3s ease-in-out;
+}
+
+.site-nav li a:hover::before {
+  width: 100%;
+}
+
+.menu-open .overlay,
+.menu-open .site-nav {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+@media (max-width: 680px) {
+  .site-header,
+  .site-footer {
+    padding: 21px 6vw;
+  }
+
+  main {
+    min-height: calc(100svh - 126px);
+    align-items: start;
+    padding: 100px 8vw 150px;
+  }
+
+  h1 {
+    font-size: clamp(3.2rem, 14vw, 5.4rem);
+  }
+
+  .shape-one {
+    top: auto;
+    right: -10%;
+    bottom: 8%;
+    width: 48vw;
+  }
+
+  .shape-two {
+    right: 48%;
+    bottom: 10%;
+    width: 42px;
+  }
+
+  .site-footer {
+    gap: 12px;
+    font-size: 0.68rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
