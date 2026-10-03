@@ -177,6 +177,139 @@ body.menu-open {
   overflow: hidden;
 }
 
+#projects article {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 400px;
+  width: 800px;
+  border: solid 1px #f2f2f2;
+  overflow: hidden;
+}
+
+.FirstlineGal {
+  height: 70px;
+  width: 400px;
+  position: absolute;
+  top: 10px;
+  left: 23%;
+  overflow: hidden;
+}
+
+.SecondlineGal {
+  height: 70px;
+  width: 500px;
+  border: solid 1px #f2f2f2;
+  position: absolute;
+  top: 80px;
+  left: 18%;
+}
+
+.ThirdlineGal {
+  height: 70px;
+  width: 600px;
+  border: solid 1px #f2f2f2;
+  position: absolute;
+  top: 150px;
+  left: 12%;
+}
+
+.FourthlineGal {
+  height: 70px;
+  width: 500px;
+  border: solid 1px #f2f2f2;
+  position: absolute;
+  top: 220px;
+  left: 18%;
+}
+
+.FifthlineGal {
+  height: 70px;
+  width: 400px;
+  border: solid 1px #f2f2f2;
+  position: absolute;
+  top: 290px;
+  left: 23%;
+}
+
+.FirstlineGal,
+.SecondlineGal,
+.ThirdlineGal,
+.FourthlineGal,
+.FifthlineGal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5px;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.FirstlineGal div,
+.SecondlineGal div,
+.ThirdlineGal div,
+.FourthlineGal div,
+.FifthlineGal div {
+  height: 70px;
+  width: 80px;
+  overflow: hidden;
+}
+
+.FirstlineGal div img,
+.SecondlineGal div img,
+.ThirdlineGal div img,
+.FourthlineGal div img,
+.FifthlineGal div img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.FirstlineGal .slider {
+  display: flex;
+  height: 70px;
+  width: max-content;
+  border: 0;
+  overflow: visible;
+  animation: slide 24s linear infinite;
+}
+
+@keyframes slide {
+  to {
+    transform: translateX(-20%);
+  }
+}
+
+.FirstlineGal .slider > div {
+  box-sizing: border-box;
+  flex: 0 0 80px;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.FirstlineGal img {
+  filter: grayscale(1);
+  transition: filter 0.25s ease;
+}
+
+.FirstlineGal:hover img {
+  filter: grayscale(0);
+}
+
+.FirstlineGal .slider > div:hover {
+  z-index: 1;
+  transform: scale(1.08);
+}
+
+
+
 @media (max-width: 680px) {
   .site-header,
   .site-footer {
